@@ -1,13 +1,9 @@
 {
-    "[tex]": {
-        // スニペット補完中にも補完を使えるようにする
-        "editor.suggest.snippetsPreventQuickSuggestions": false,
-        // インデント幅を2にする
-        "editor.tabSize": 2
-    },
     "[latex]": {
-        // スニペット補完中にも補完を使えるようにする
+        // スニペット補完中の補完を無効化
         "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // スニペットのサジェストを最上位に表示
+        "editor.snippetSuggestions": "top",
         // インデント幅を2にする
         "editor.tabSize": 2
     },
@@ -15,11 +11,9 @@
         // インデント幅を2にする
         "editor.tabSize": 2
     },
-
     // 使用パッケージのコマンドや環境の補完を有効にする
     "latex-workshop.intellisense.package.enabled": true,
-    // 生成ファイルを削除するときに対象とするファイル
-    // デフォルト値に "*.synctex.gz" を追加
+    // 削除するファイル
     "latex-workshop.latex.clean.fileTypes": [
         "*.aux",
         "*.bbl",
@@ -45,7 +39,7 @@
         "*.dvi",
         "*.synctex.gz"
     ],
-    // 生成ファイルを "out" ディレクトリに吐き出す
+    // out に出力する
     "latex-workshop.latex.outDir": "out",
     // ビルドのレシピ
     "latex-workshop.latex.recipes": [
@@ -56,7 +50,7 @@
             ]
         },
     ],
-    // ビルドのレシピに使われるパーツ
+    // ビルドのレシピパーツ
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
@@ -65,13 +59,11 @@
                 "-silent",
                 "-outdir=%OUTDIR%",
                 "%DOCFILE%"
-            ],
-            // "command": "echo",
-            // "args": [
-            //     "hoge"
-            // ]
-        },
+            ]
+        }
     ],
+    // atuoSave は相性が悪いから切る
     "files.autoSave": "off",
+    // synctex の有効化
     "latex-workshop.synctex.afterBuild.enabled": true
 }
